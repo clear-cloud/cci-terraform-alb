@@ -1,5 +1,6 @@
 #variable "certificate_arn" {}
 variable "zone_id" {}
+
 variable "friendly_name" {}
 
 variable "subnets" {
@@ -69,20 +70,12 @@ variable "listener1_alb_listener_protocol" {
 # -----------------------------
 # Listener 2 Variables
 # -----------------------------
-/*variable "listener2_alb_listener_port" {
+variable "listener2_alb_listener_port" {
   default = "443"
 }
 
 variable "listener2_alb_listener_protocol" {
-  default = "TLS"
-}
-
-variable "alb_listener2_port" {
-  default = "443"
-}
-
-variable "alb_listener2_protocol" {
-  default = "TLS"
+  default = "HTTPS"
 }
 
 variable "listener2_svc_port" {
@@ -90,15 +83,15 @@ variable "listener2_svc_port" {
 }
 
 variable "listener2_target_group_protocol" {
-  default = "TCP"
+  default = "HTTPS"
 }
 
-variable "listener2_target_id" {
-  type        = "string"
-  description = "ec2 instance(s) id to attach to listener2"
-}
+#variable "listener2_target_id" {
+#  type        = "string"
+#  description = "ec2 instance(s) id to attach to listener2"
+#}
 
 variable "listener2_health_check_protocol" {
-  default = "TCP"
+  default = "HTTPS"
 }
-*/
+
