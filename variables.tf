@@ -1,4 +1,8 @@
-#variable "certificate_arn" {}
+variable "certificate_arn" {
+  description = "Cert arn. Setting a value here will cause the HTTP:443 listener2 to be created"
+  default     = ""
+}
+
 variable "zone_id" {}
 
 variable "friendly_name" {}
@@ -86,12 +90,6 @@ variable "listener2_target_group_protocol" {
   default = "HTTPS"
 }
 
-#variable "listener2_target_id" {
-#  type        = "string"
-#  description = "ec2 instance(s) id to attach to listener2"
-#}
-
 variable "listener2_health_check_protocol" {
   default = "HTTPS"
 }
-
