@@ -1,6 +1,11 @@
 variable "certificate_arn" {
-  description = "Cert arn. Setting a value here will cause the HTTP:443 listener2 to be created"
-  default     = "0"
+  description = "Cert arn"
+  default     = ""
+}
+
+variable "https_listener_required" {
+  description = "Enables / Disables creating a second https listener."
+  default     = "false"
 }
 
 variable "zone_id" {}
