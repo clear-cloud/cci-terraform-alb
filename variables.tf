@@ -28,7 +28,7 @@ variable "load_balancer_type" {
 }
 
 variable "alb_allowed_ports" {
-  default = "443"
+  default = "80,443"
 }
 
 #variable "subnetA" {}
@@ -98,7 +98,8 @@ variable "listener2_target_group_protocol" {
 variable "listener2_health_check_protocol" {
   default = "HTTPS"
 }
+
 variable "listener2_target_id" {
   description = "list of instance ids to attach to listener2"
-  default = "0"
+  default     = "0"
 }
