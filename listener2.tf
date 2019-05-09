@@ -2,7 +2,7 @@
 # Listener2
 # -------------------
 resource "aws_lb_listener" "l2_alb_listener" {
-  count             = "${length(split(",", var.certificate_arn)) ? 1 : 0}"
+  count             = "${length(split(",", var.certificate_arn))}"
   load_balancer_arn = "${aws_lb.alb.arn}"
   certificate_arn   = "${var.certificate_arn}"
   port              = "${var.listener2_alb_listener_port}"
