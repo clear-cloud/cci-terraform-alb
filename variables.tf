@@ -69,7 +69,7 @@ variable "listener1_alb_listener_protocol" {
 # -----------------------------
 # Listener 2 Variables
 # -----------------------------
-variable "listener2_alb_listener_port" {
+/*variable "listener2_alb_listener_port" {
   default = "443"
 }
 
@@ -101,3 +101,4 @@ variable "listener2_target_id" {
 variable "listener2_health_check_protocol" {
   default = "TCP"
 }
+*/
