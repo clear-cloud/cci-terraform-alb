@@ -1,3 +1,7 @@
+variable "matcher" {
+  description = "Success Codes for health check"
+  default = "200"
+}
 variable "certificate_arn" {
   description = "Cert arn"
   default     = ""
