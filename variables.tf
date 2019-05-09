@@ -1,6 +1,6 @@
 variable "certificate_arn" {
   description = "Cert arn. Setting a value here will cause the HTTP:443 listener2 to be created"
-  default     = ""
+  default     = "0"
 }
 
 variable "zone_id" {}
