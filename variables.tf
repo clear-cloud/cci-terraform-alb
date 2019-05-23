@@ -1,7 +1,13 @@
+variable "path" {
+  description = "health check path"
+  default     = "/"
+}
+
 variable "matcher" {
   description = "Success Codes for health check"
-  default = "200"
+  default     = "200"
 }
+
 variable "certificate_arn" {
   description = "Cert arn"
   default     = ""

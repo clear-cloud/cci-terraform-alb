@@ -29,6 +29,7 @@ resource "aws_lb_target_group" "l2_alb_target_group" {
     interval            = "${var.interval}"
     protocol            = "${var.listener2_health_check_protocol}"
     matcher             = "${var.matcher}"
+    path                = "${var.path}"
   }
 }
 
