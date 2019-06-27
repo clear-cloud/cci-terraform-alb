@@ -37,8 +37,9 @@ resource "aws_lb_target_group" "l2_alb_target_group" {
 # Listener2 - Target Group Attachment
 # -------------------
 resource "aws_lb_target_group_attachment" "l2_target_group" {
-  count            = "${length(split(",", var.listener2_target_id))}"
+  count            = "${length(split(",", var.listener2_target_id)) ? length(split(",", var.listener2_target_id)) : 0}"
   target_group_arn = "${aws_lb_target_group.l2_alb_target_group.arn}"
   target_id        = "${element(split(",",var.listener2_target_id), count.index)}"
   port             = "${var.listener2_svc_port}"
 }
+
