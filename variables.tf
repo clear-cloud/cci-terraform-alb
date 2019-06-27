@@ -13,6 +13,11 @@ variable "certificate_arn" {
   default     = ""
 }
 
+variable "http_listener_required" {
+  description = "Enables / Disables creating HTTP listener. Listener auto redirects to HTTPS"
+  default     = "true"
+}
+
 variable "https_listener_required" {
   description = "Enables / Disables creating a second https listener."
   default     = "false"

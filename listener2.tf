@@ -18,7 +18,7 @@ resource "aws_lb_listener" "l2_alb_listener" {
 # Listener2 - Target Group
 # -------------------
 resource "aws_lb_target_group" "l2_alb_target_group" {
-  count             = "${var.https_listener_required ? 1 : 0}"
+  count    = "${var.https_listener_required ? 1 : 0}"
   name     = "${var.name}-${var.environment}-tg-listener2-${var.listener2_svc_port}"
   port     = "${var.listener2_svc_port}"
   protocol = "${var.listener2_target_group_protocol}"
@@ -33,14 +33,3 @@ resource "aws_lb_target_group" "l2_alb_target_group" {
     path                = "${var.path}"
   }
 }
-
-# -------------------
-# Listener2 - Target Group Attachment
-# -------------------
-#resource "aws_lb_target_group_attachment" "l2_target_group" {
-#  count            = "${var.listener2_target_id ? length(split(",", var.listener2_target_id)) : 0}"
-#  target_group_arn = "${aws_lb_target_group.l2_alb_target_group.arn}"
-#  target_id        = "${element(split(",",var.listener2_target_id), count.index)}"
-#  port             = "${var.listener2_svc_port}"
-#}
-
