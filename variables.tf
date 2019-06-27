@@ -13,6 +13,11 @@ variable "certificate_arn" {
   default     = ""
 }
 
+variable "http_listener_required" {
+  description = "Enables / Disables creating HTTP listener. Listener auto redirects to HTTPS"
+  default     = "true"
+}
+
 variable "https_listener_required" {
   description = "Enables / Disables creating a second https listener."
   default     = "false"
@@ -111,5 +116,5 @@ variable "listener2_health_check_protocol" {
 
 variable "listener2_target_id" {
   description = "list of instance ids to attach to listener2"
-  default     = "0"
+  default     = ""
 }
