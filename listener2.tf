@@ -7,6 +7,7 @@ resource "aws_lb_listener" "l2_alb_listener" {
   certificate_arn   = "${var.certificate_arn}"
   port              = "${var.listener2_alb_listener_port}"
   protocol          = "${var.listener2_alb_listener_protocol}"
+  ssl_policy        = "${var.ssl_policy}"
 
   default_action {
     target_group_arn = "${aws_lb_target_group.l2_alb_target_group.arn}"

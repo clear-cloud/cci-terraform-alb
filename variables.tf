@@ -1,3 +1,8 @@
+variable "ssl_policy" {
+  description = "SSL Policy"
+  default     = "ELBSecurityPolicy-2016-08"
+}
+
 variable "path" {
   description = "health check path"
   default     = "/"
