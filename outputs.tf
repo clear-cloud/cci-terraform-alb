@@ -5,3 +5,8 @@ output "sg_id" {
 output "listener2_arn" {
   value = "${aws_lb_target_group.l2_alb_target_group.*.arn}"
 }
+
+output "listener2_name" {
+  value = "${aws_lb_target_group.l2_alb_target_group.name}"
+}
+
