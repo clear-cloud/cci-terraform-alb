@@ -1,3 +1,7 @@
+variable "deregistration_delay" {
+  default = "300"
+}
+
 variable "ssl_policy" {
   description = "SSL Policy"
   default     = "ELBSecurityPolicy-2016-08"

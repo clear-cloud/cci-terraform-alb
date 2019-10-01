@@ -19,11 +19,12 @@ resource "aws_lb_listener" "l2_alb_listener" {
 # Listener2 - Target Group
 # -------------------
 resource "aws_lb_target_group" "l2_alb_target_group" {
-  count    = "${var.https_listener_required ? 1 : 0}"
-  name     = "${var.name}-${var.environment}-tg-listener2-${var.listener2_svc_port}"
-  port     = "${var.listener2_svc_port}"
-  protocol = "${var.listener2_target_group_protocol}"
-  vpc_id   = "${var.vpc_id}"
+  count                = "${var.https_listener_required ? 1 : 0}"
+  name                 = "${var.name}-${var.environment}-tg-listener2-${var.listener2_svc_port}"
+  port                 = "${var.listener2_svc_port}"
+  protocol             = "${var.listener2_target_group_protocol}"
+  vpc_id               = "${var.vpc_id}"
+  deregistration_delay = "${var.deregistration_delay}"
 
   health_check {
     healthy_threshold   = "${var.healthy_threshold}"
