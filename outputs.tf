@@ -9,4 +9,3 @@ output "listener2_arn" {
 output "listener2_name" {
   value = "${join(",", aws_lb_target_group.l2_alb_target_group.*.name)}"
 }
-

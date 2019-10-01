@@ -120,6 +120,7 @@ variable "listener2_health_check_protocol" {
 }
 
 variable "listener2_target_id" {
+  type        = "string"
   description = "list of instance ids to attach to listener2"
   default     = ""
 }
